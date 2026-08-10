@@ -8,6 +8,7 @@ import Avatar from "@mui/material/Avatar"
 import Box from "@mui/material/Box";
 
 import {toast} from "react-toastify";
+import server from "../environment";
 
 export default function Signup(){
 
@@ -31,7 +32,7 @@ export default function Signup(){
     const handleSubmit= async (e) =>{
         e.preventDefault();
         try{
-            const response = await axios.post("http://localhost:8000/api/v1/users/register",formData);
+            const response = await axios.post(`${server}/api/v1/users/register`,formData);
             console.log(response.data);
             toast.success(response.data.message);
             if(response.status === 201){ navigate("/login"); }

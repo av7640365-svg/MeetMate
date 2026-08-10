@@ -10,6 +10,7 @@ import {toast} from "react-toastify";
 
 import {useContext} from "react";
 import AuthContext from "../contexts/AuthContext";
+import server from "../environment";
 
 export default function Login(){
 
@@ -28,7 +29,7 @@ export default function Login(){
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-      const response = await axios.post("http://localhost:8000/api/v1/users/login",formData);
+      const response = await axios.post(`${server}/api/v1/users/login`,formData);
       console.log(response.status);
       toast.success(response.data.message);
 
