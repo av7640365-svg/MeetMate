@@ -130,7 +130,7 @@ let localVideoRef = useRef();
         for (let id in connections) {
             if (id === socketIdRef.current) continue
 
-            connections[id].addStream(window.localStream)
+            connections[id].addtrack(window.localStream)
 
             connections[id].createOffer().then((description) => {
                 console.log(description)
@@ -156,7 +156,7 @@ let localVideoRef = useRef();
             localVideoRef.current.srcObject = window.localStream
 
             for (let id in connections) {
-                connections[id].addStream(window.localStream)
+                connections[id].addTrack(window.localStream)
 
                 connections[id].createOffer().then((description) => {
                     connections[id].setLocalDescription(description)
@@ -252,7 +252,7 @@ let localVideoRef = useRef();
                     }
 
                     // Wait for their video stream
-                    connections[socketListId].onaddstream = (event) => {
+                    connections[socketListId].ontrack = (event) => {
                         console.log("BEFORE:", videoRef.current);
                         console.log("FINDING ID: ", socketListId);
 
@@ -290,11 +290,11 @@ let localVideoRef = useRef();
 
                     // Add the local video stream
                     if (window.localStream !== undefined && window.localStream !== null) {
-                        connections[socketListId].addStream(window.localStream)
+                        connections[socketListId].addTrack(window.localStream)
                     } else {
                         let blackSilence = (...args) => new MediaStream([black(...args), silence()])
                         window.localStream = blackSilence()
-                        connections[socketListId].addStream(window.localStream)
+                        connections[socketListId].addTrack(window.localStream)
                     }
                 })
 
@@ -303,7 +303,7 @@ let localVideoRef = useRef();
                         if (id2 === socketIdRef.current) continue
 
                         try {
-                            connections[id2].addStream(window.localStream)
+                            connections[id2].addTrack(window.localStream)
                         } catch (e) { }
 
                         connections[id2].createOffer().then((description) => {
@@ -370,7 +370,7 @@ let localVideoRef = useRef();
         for (let id in connections) {
             if (id === socketIdRef.current) continue
 
-            connections[id].addStream(window.localStream)
+            connections[id].addTrack(window.localStream)
 
             connections[id].createOffer().then((description) => {
                 connections[id].setLocalDescription(description)
