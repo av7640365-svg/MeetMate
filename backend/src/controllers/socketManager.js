@@ -7,7 +7,7 @@ let timeOnline = {}
 const connectToSocket = (server) =>{
     const io = new Server(server,{
         cors:{
-            origin:"https://meetmatefrontend-xtl9.onrender.com",
+            origin:["https://meetmatefrontend-xtl9.onrender.com","http://localhost:3000"],
             methods:["GET","POST"],
             credentials:true
         }

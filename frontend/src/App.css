@@ -207,7 +207,7 @@ justify-content: space-between;
     }
 
     .rightPanel > img {
-        width: 85vw;
-        max-width: 300px;
+        width: 70vw;
+        max-width: 200px;
     }
 }
