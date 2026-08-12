@@ -108,7 +108,7 @@
 
 
 
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
 
     .meetUserVideo {
         width: 25vw;
@@ -146,7 +146,7 @@
         padding-inline: 10px;
         box-sizing: border-box;
     }
-}
+} */
 
 @media (max-width: 600px) {
     .conferenceView {
@@ -171,23 +171,23 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border-radius: 10px;
+        border-radius: 15px !important;
         display: block;
     }
        
-    
-    .meetUserVideo {
-        width: 30vw;
-        max-height: 30vh;
-        bottom: 11vh;
+       .meetUserVideo {
+        width: 25vw;
+        max-height: 12vh;
         right: 2vw;
-        border-radius: 10px;
+        bottom: 7vh;
+        border-radius: 10px !important;
+        object-fit: cover;
+        clip-path: inset(0 round 10px);
     }
-
     .buttonContainer {
         gap: 2px;
         width: 100%;
-        bottom: 0;
+        bottom: 1rem;
     }
 
     .buttonContainer svg {
@@ -200,7 +200,7 @@
         height: 75vh;
         right: 3vw;
         top: 5vh;
-        bottom:auto;
+       
         padding-inline: 8px;
         box-sizing: border-box;
     }
