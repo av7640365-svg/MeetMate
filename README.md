@@ -7,7 +7,7 @@ MeetMate is a real-time video conferencing web application that allows users to 
 The project was built to understand real-time communication, WebRTC, media devices, and full-stack web application deployment.
 
 ## 🚀 Live Demo
- [Live Demo](https://meetmatefrontend-xt19.onrender.com)
+ [Live Demo](https://meetmatefrontend-xtl9.onrender.com)
 
 ## ✨ Features
 
